@@ -6,29 +6,28 @@ import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 
 export default function Banner () {
-    const covers = ['/img/cover.jpg', '/img/cover2.jpg','/img/cover3.jpg','/img/cover4.jpg']
+    const covers = ['/img/Cars_Banner.jpg']
     const [index, setIndex] = useState(0)
     const router = useRouter();
     const { data:session } = useSession()
 
     return (
-        <div className={styles.banner} onClick={()=>setIndex(index+1)}>
-            <Image src={covers[index%4]}
+        <div className={styles.banner} /*onClick={()=>setIndex(index+1)}*/>
+            <Image src={covers[0]}
             alt='cover'
             fill={true}
             priority
             objectFit='cover'/>
-            <div className={styles.bannerText}>
-                <h1 className='text-4xl font-semibold font-sans text-white'>Vaccine Service Center </h1>
-                <h3 className='text-l font-sans text-white'> We're thrilled to open Vaccine Service Center, your trusted destination for vaccinations in Chula City.</h3>
-                <h3 className='text-l font-sans text-white'> Stay tuned for updates! #VaccineServiceCenter </h3>
+            <div className='absolute top-[350px] left-[200px] z-20 w-[800px] h-[200px]'>
+                <h1 className='text-6xl font-semibold font-sans text-white pb-[20px] drop-shadow-[0_2px_10px_rgba(0, 0, 0, 0.95)]'>Car Rental</h1>
+                <h3 className='text-xl font-sans text-white'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a ligula tincidunt, fringilla sapien nec,</h3>
+                <button className='text-cyan-100 bg-red-600 font-semibold px-[60px] py-[12px] rounded z-30 absolute hover:bg-red-700 hover:text-white hover:border-transparent mt-[50px]'
+                onClick={(e) => {e.stopPropagation(); router.push('/hospital')}}>VIEW OFFERS</button>
             </div>
             {
                 session? <div className='z-30 absolute top-5 right-10 font-sans font-semibold text-white text-lg'>Welcome {session.user?.name}</div>:null
             }
-            <button className='bg-white text-red-800 border border-red-800 font-semibold py-2 px-2 m-2 mr-4 rouded z-30 absolute bottom-0 right-0
-                hover:bg-red-800 hover:text-white hover:border-transparent'
-                onClick={(e) => {e.stopPropagation(); router.push('/hospital')}}>Select Hospital</button>
+            
         </div>
     );
 }
