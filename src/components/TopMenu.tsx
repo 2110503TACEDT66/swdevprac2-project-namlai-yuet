@@ -14,13 +14,13 @@ export default async function TopMenu() {
             </div>
             {
                     session? 
-                    <div className=''>
-                        <TopMenuItem title='Sign-out' pageRef='/api/auth/logout'/>
-                        <TopMenuItem title='User' pageRef='/api/auth/me'/>
-                    </div>
+                    <>
+                        <TopMenuItem title='Sign-out' pageRef='/api/auth/signout'/>
+                        <TopMenuItem title='User' pageRef='/userprofile'/>
+                    </>
                     :
                     <>
-                        <TopMenuItem title='Register' pageRef='/api/auth/signin'/>
+                        <TopMenuItem title='Register' pageRef='register'/>
                         <TopMenuItem title='Log-in' pageRef='/api/auth/signin'/>
                     </>
             }

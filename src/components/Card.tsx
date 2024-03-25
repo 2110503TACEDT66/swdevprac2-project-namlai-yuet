@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import InteractiveCard from './InteractiveCard';
-import { Rating } from '@mui/material';
 import { useState } from 'react';
 
 
-export default function Card ({hospitalName,imgSrc,onCompare} : {hospitalName:string,imgSrc:string,onCompare?:Function}) {
+export default function Card ({carName,imgSrc} : {carName:string,imgSrc:string}) {
     const [value, setValue] = useState(5);
     return  (
         <InteractiveCard>
@@ -15,22 +14,7 @@ export default function Card ({hospitalName,imgSrc,onCompare} : {hospitalName:st
                 className='object-cover rounded-t-lg'/>
             </div>
             <div className='w-full h-[15%] p-[15px] text-medium text-black font-medium text-center rounded-b-lg'>
-                {hospitalName}
-                <div>
-                {onCompare? <Rating
-                    size='large'
-                    data-testid={hospitalName + ' Rating'} 
-                    name={hospitalName + ' Rating'} 
-                    id={hospitalName + ' Rating'} 
-                    value={value} 
-                    onChange={(e, newValue) => {
-                      e.stopPropagation();
-                      setValue(newValue || 0);
-                      onCompare(hospitalName, newValue);
-                    }}
-                />:''}
-
-                </div>
+                {carName}
             </div>
         </InteractiveCard>
     );
