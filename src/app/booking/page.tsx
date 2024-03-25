@@ -11,6 +11,11 @@ import { addBooking } from "@/redux/features/bookSlice";
 import { useState } from "react";
 import { Dayjs } from "dayjs";
 
+/*
+  booking & mybooking
+  Provider Register
+  Add car section
+*/
 export default function Booking(){
 
   const urlParams = useSearchParams()

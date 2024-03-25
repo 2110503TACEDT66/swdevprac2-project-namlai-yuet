@@ -6,6 +6,7 @@ interface CarItem {
     license: string,
     picture: string,
     provider: string,
+    dayRate: string;
     createdAt: string;
   }
   
@@ -18,10 +19,12 @@ interface CarItem {
 
   interface BookingItem {
     _id: string;
-    user: string;
-    car: string;
-    provider: string;
-    PickUpDate: string;
-    DropOffDate: string;
+    carId: string;
+    carModel: string;
+    numOfDays: number;
+    pickupDate: string;
+    pickupLocation: string;
+    returnDate: string;
+    returnLocation: string;
     createdAt: string;
   }

@@ -12,14 +12,14 @@ export const bookSlice = createSlice ({
     reducers: {
         addBooking: (state, action: PayloadAction<BookingItem>) => {
             const checkingId = state.bookItems.filter(obj => {
-                return ((obj.id !== action.payload.id))
+                return ((obj._id !== action.payload._id))
             })
             checkingId.push(action.payload)
             state.bookItems = checkingId
         },
         removeBooking: (state, action: PayloadAction<string>) => {
             const remainItems = state.bookItems.filter(obj => {
-                return ((obj.id !== action.payload))
+                return ((obj._id !== action.payload))
             })
             state.bookItems = remainItems
         }
