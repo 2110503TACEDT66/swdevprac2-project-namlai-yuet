@@ -1,3 +1,4 @@
+import styles from './register.module.css'
 
 export default async function register() {
     const registerUser = async (addInformation:FormData) => {
@@ -25,34 +26,36 @@ export default async function register() {
         }
     }
     return (
-        <main className="bg-red-900 m-5 p-5 pt-[100px]">
-            <form action={registerUser}>
-                <div>
-                    <label htmlFor="name" className="w-auto pr-4">
-                        Username:
-                    </label>
-                    <input type="text" required id="name" name="name" placeholder="username"/>
-                </div>
-                <div>
-                    <label htmlFor="email" className="w-auto pr-4">
-                        Email:
-                    </label>
-                    <input type="text" required id="email" name="email" placeholder="email"/>
-                </div>
-                <div>
-                    <label htmlFor="password" className="w-auto pr-4">
-                        Password:
-                    </label>
-                    <input type="text" required id="password" name="password" placeholder="password"/>
-                </div>
-                <div>
-                    <label htmlFor="tel" className="w-auto pr-4">
-                        Tel.:
-                    </label>
-                    <input type="text" required id="tel" name="tel" placeholder="telephone number"/>
-                </div>
-                <button type="submit" className="block rounded-md bg-slate-700 hover:bg-slate-900 px-3 py-3 text-white shadow-sm"> submit </button>
-            </form>
+        <main className='bg-[#21333c]'>
+            <div className="h-[90px] bg-gradient-to-t from-[#21333c] to-black"></div>
+            <div className={styles.registerform}>
+                <form action={registerUser} className={styles.innerform}>
+                    <h2 className='text-2xl mb-[60px] mt-[30px]'>Registration Form</h2>
+                        <label htmlFor="name" className={styles.forlabel}>
+                            Username:
+                        </label>
+                        <input type="text" required id="name" name="name" placeholder="Username" className={styles.forinput}/>
+        
+                        <label htmlFor="email" className={styles.forlabel}>
+                            Email:
+                        </label>
+                        <input className={styles.forinput} type="text" required id="email" name="email" placeholder="Email"/>
+        
+                        <label htmlFor="password" className={styles.forlabel}>
+                            Password:
+                        </label>
+                        <input className={styles.forinput} type="text" required id="password" name="password" placeholder="Password"/>
+        
+                        <label htmlFor="tel" className={styles.forlabel}>
+                            Tel.:
+                        </label>
+                        <input className={styles.forinput} type="text" required id="tel" name="tel" placeholder="Telephone Number"/>
+        
+                        <button type="submit" className={styles.btn}>Submit Registration</button>
+                </form>
+            </div>
+            <div className='h-[12vh] bg-[#21333c]'>
+            </div>
         </main>
     )
 }
