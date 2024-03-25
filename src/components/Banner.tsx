@@ -18,7 +18,7 @@ export default function Banner () {
             fill={true}
             priority
             objectFit='cover'/>
-            <div className='absolute top-[350px] left-[200px] z-20 w-[800px] h-[200px]'>
+            <div className='sticky top-[350px] left-[200px] z-20 w-[800px] h-[200px]'>
                 <h1 className='text-6xl font-semibold font-sans text-white pb-[20px] drop-shadow-[0_2px_10px_rgba(0, 0, 0, 0.95)]'>Car Rental</h1>
                 <h3 className='text-xl font-sans text-white'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a ligula tincidunt, fringilla sapien nec,</h3>
                 <button className='text-cyan-100 bg-red-600 font-semibold px-[60px] py-[12px] rounded z-30 absolute hover:bg-red-700 hover:text-white hover:border-transparent mt-[50px]'

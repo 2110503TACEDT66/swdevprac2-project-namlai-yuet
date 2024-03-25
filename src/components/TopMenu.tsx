@@ -20,8 +20,8 @@ export default async function TopMenu() {
                     </div>
                     :
                     <>
-                        <TopMenuItem title='Register' pageRef='/api/auth/register'/>
-                        <TopMenuItem title='Log-in' pageRef='/api/auth/login'/>
+                        <TopMenuItem title='Register' pageRef='/api/auth/signin'/>
+                        <TopMenuItem title='Log-in' pageRef='/api/auth/signin'/>
                     </>
             }
             <TopMenuItem title='My Booking' pageRef='/mybooking'/>
