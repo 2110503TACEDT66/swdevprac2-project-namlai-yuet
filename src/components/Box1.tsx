@@ -27,7 +27,8 @@ export default function Box1() {
                 <div className="text-center text-black text-2xl mx-[180px] justify-center">
                     <Image src={'/img/provider.png'} className='h-[120px] w-auto justify-center' alt='logo' width={0} height={0} sizes='100vh'/>
                     <h2 className="mt-[30px]">Become a Provider</h2>
-                    <button className='text-lg text-black bg-white border-[1px] border-black font-semibold px-[45px] py-[5px] rounded hover:shadow-lg mt-[40px]'>Contact</button>
+                    <button className='text-lg text-black bg-white border-[1px] border-black font-semibold px-[45px] py-[5px] rounded hover:shadow-lg mt-[40px]'
+                    onClick={(e) => {e.stopPropagation(); router.push('/register/provider')}}>Register Now!</button>
                 </div>
             </div>
         </div>

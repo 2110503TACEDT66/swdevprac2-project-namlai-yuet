@@ -11,7 +11,7 @@ export default function BookingList() {
       useEffect(() => {
         const fetchBookings = async () => {
             try {
-                const res = await fetch("http://localhost:5000/api/v1/bookings",{
+                const res = await fetch("https://presentation-day-1-namlai-yuet-b3u3.vercel.app/api/v1/bookings",{
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export default function BookingList() {
         }, []);
         const deleteBooking = async (id: string) => {
             try {
-                const res = await fetch(`http://localhost:5000/api/v1/bookings/${id}`, {
+                const res = await fetch(`https://presentation-day-1-namlai-yuet-b3u3.vercel.app/api/v1/bookings/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ export default function BookingList() {
                             <button onClick={() => deleteBooking(booking._id)} className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-3 text-white shadow-sm">
                                 Remove Booking
                             </button>
-                            <Link href={'/mybooking/edit/' + booking._id}>
+                            <Link href={`/mybooking/edit?id=${booking._id}&carModel=${booking.carModel}`}>
                                 Edit
                             </Link>
                         </div>
