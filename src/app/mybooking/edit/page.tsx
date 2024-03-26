@@ -50,10 +50,13 @@ export default function EditPage() {
     };
   
     return (
-      <main className="bg-red-900 m-5 p-5 pt-[100px]">
-        <form onSubmit={handleSubmit}>
+      <main className="flex flex-col bg-gradient-to-t from-[#21333c] to-black">
+        <div className="bg-gradient-to-t from-[#21333c] to-blackfixed w-[100vw] h-[100vh]">
+        </div>
+        <form onSubmit={handleSubmit} className="fixed translate-x-[-50%] translate-y-[-50%] top-[50%] left-[50%] mt-[42.5px] z-10 p-[15px] rounded-xl backdrop-blur bg-gray-500 bg-opacity-30
+        flex flex-col justify-center">
           <div className="w-fit space-y-2">
-            <div className="text-md text-left text-gray-600">
+            <div className="text-md text-left text-gray-200">
               Pick-Up Date and Location
             </div>
             <DateReserve
@@ -64,7 +67,7 @@ export default function EditPage() {
                 setPickupLocation(value);
               }}
             />
-            <div className="text-md text-left text-gray-600">
+            <div className="text-md text-left text-gray-200">
               Return Date and Location
             </div>
             <DateReserve
@@ -78,7 +81,7 @@ export default function EditPage() {
           </div>
           <button
             type="submit"
-            className="block rounded-md bg-slate-700 hover:bg-slate-900 px-3 py-3 text-white shadow-sm">
+            className="block rounded-md bg-slate-700 hover:bg-slate-900 px-3 py-3 text-white shadow-sm mt-5 duration-300">
             Submit
           </button>
         </form>
