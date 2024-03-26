@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function DateReserve({onDateChange, onLocationChange}:{onDateChange:Function, onLocationChange:Function}) {
     const [bookingDate, setBookingDate] = useState<Dayjs|null>(null)
-    const [location, setLocation] = useState('Chula')
+    const [location, setLocation] = useState('Bangkok')
 
     return (
         <div className="bg-slate-100 rounded-lg space-x-5 space-y-2 w-fit px-10 py-5 flex flex-row justify-center">
@@ -17,10 +17,11 @@ export default function DateReserve({onDateChange, onLocationChange}:{onDateChan
             </LocalizationProvider>
 
             <Select variant="standard" name = "location" id="location" className="h-[2em] w-[200px] font-sans"
-            value={location} onChange={(e)=>{setLocation(e.target.value); onLocationChange(e.target.value)}} defaultValue="Chula">
-                <MenuItem value="Chula">Chulalongkorn Location</MenuItem>
-                <MenuItem value="Rajavithi">Rajavithi Location</MenuItem>
-                <MenuItem value="Thammasart">Thammasat University Location</MenuItem>
+            value={location} onChange={(e)=>{setLocation(e.target.value); onLocationChange(e.target.value)}} defaultValue="Bangkok">
+                <MenuItem value="Bangkok">Bangkok</MenuItem>
+                <MenuItem value="Chiang Mai">Chiang Mai</MenuItem>
+                <MenuItem value="Phuket">Phuket</MenuItem>
+                <MenuItem value="Hat Yai">Hat Yai</MenuItem>
             </Select>
         </div>
     );

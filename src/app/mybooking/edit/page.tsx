@@ -10,9 +10,9 @@ export default function EditPage() {
     const bookingId = urlParams.get("id");
     const carModel = urlParams.get("carModel");
     const [pickupDate, setPickupDate] = useState<Dayjs | null>(null);
-    const [pickupLocation, setPickupLocation] = useState<string>("Chula");
+    const [pickupLocation, setPickupLocation] = useState<string>("Bangkok");
     const [returnDate, setReturnDate] = useState<Dayjs | null>(null);
-    const [returnLocation, setReturnLocation] = useState<string>("Chula");
+    const [returnLocation, setReturnLocation] = useState<string>("Bangkok");
     const [formData, setFormData] = useState({
       carModel: carModel,
       pickupDate: "",

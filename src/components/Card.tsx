@@ -3,7 +3,7 @@ import InteractiveCard from './InteractiveCard';
 import { useState } from 'react';
 
 
-export default function Card ({carName,imgSrc} : {carName:string,imgSrc:string}) {
+export default function Card ({carBrand,carModel,dayRate,imgSrc} : {carBrand:string,carModel:string,dayRate:string,imgSrc:string}) {
     const [value, setValue] = useState(5);
     return  (
         <InteractiveCard>
@@ -14,7 +14,8 @@ export default function Card ({carName,imgSrc} : {carName:string,imgSrc:string})
                 className='object-cover rounded-t-lg'/>
             </div>
             <div className='w-full h-[15%] p-[15px] text-medium text-black font-medium text-center rounded-b-lg'>
-                {carName}
+                <h1 className='font-semibold'>{carBrand} | {carModel}</h1>
+                <h2 className='text-gray-500'>Daily Rate: {dayRate} Bath</h2>
             </div>
         </InteractiveCard>
     );

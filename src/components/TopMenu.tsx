@@ -10,13 +10,13 @@ export default async function TopMenu() {
         <div className='absolute top-[15px] left-[125px] right-[125px] z-30 h-14 bg-red-800/[.0] flex flex-row justify-end text-white text-md font-sans font-semibold'>
             <div className='flex flex-row absolute left-5 items-center h-full px-2'>
                 <a href="/"><Image src={'/img/logo.png'} className='h-14 w-auto pr-[40px]' alt='logo' width={0} height={0} sizes='100vh'/></a>
-                { session? 
+                {/* { session? 
                 <>
                     {
                         session.user.role !== "user" ?<TopMenuItem title='Add Your Car' pageRef='/addcar'/>:null
                     }
                 </> : null
-                }
+                } */}
             </div>
             {
                     session? 
