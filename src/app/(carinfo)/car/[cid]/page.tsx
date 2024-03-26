@@ -26,7 +26,7 @@ export default async function CarDetailPage ({params}: {params: {cid:string}}) {
             <div>Daily Day Rate: {carDetail.data.dayRate}</div>
             </div>
             </div>
-            <Link href={`/booking?id=${params.cid}&${carDetail.data.car_model}`}>
+            <Link href={`/booking?id=${params.cid}&model=${carDetail.data.car_model}`}>
                 <button className="block rounded bg-sky-600 hover:bg-indigo-600 px-3 py-1 text-white shadow-sm">
                     Make Booking
                 </button>

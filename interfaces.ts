@@ -18,13 +18,19 @@ interface CarItem {
   }
 
   interface BookingItem {
-    _id: string;
-    carId: string;
+    _id: string,
+    user: string;
+    car: string;
     carModel: string;
-    numOfDays: number;
     pickupDate: string;
     pickupLocation: string;
     returnDate: string;
     returnLocation: string;
-    createdAt: string;
+  }
+
+  interface BookingJson {
+    success: boolean,
+    count: number,
+    pagination: Object,
+    data: BookingItem[]
   }
