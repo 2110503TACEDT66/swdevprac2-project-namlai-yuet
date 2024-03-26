@@ -30,7 +30,7 @@ export default async function register() {
             <div className="h-[90px] bg-gradient-to-t from-[#21333c] to-black"></div>
             <div className={styles.registerform}>
                 <form action={registerUser} className={styles.innerform}>
-                    <h2 className='text-2xl mb-[60px] mt-[30px]'>Registration Form</h2>
+                    <h2 className='text-2xl mb-[60px] mt-[30px] uppercase tracking-[2px]'>Registration Form</h2>
                         <label htmlFor="name" className={styles.forlabel}>
                             Username:
                         </label>
