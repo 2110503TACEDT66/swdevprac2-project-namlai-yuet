@@ -1,10 +1,15 @@
+'use client'
 import Image from "next/image"
 import getCar from "@/libs/getCar"
 import Link from "next/link"
 import HrBar from "@/components/hrBar"
+import { useSession } from "next-auth/react"
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
 export default async function CarDetailPage ({params}: {params: {cid:string}}) {
     const carDetail = await getCar(params.cid)
+    const session = await getServerSession(authOptions)
     /**
      * Mock Data for Demonstration Only
      */
@@ -42,12 +47,17 @@ export default async function CarDetailPage ({params}: {params: {cid:string}}) {
                     <div className="text-xl text-white">Color: {carDetail.data.color}</div>
                     <div className="text-xl text-white">License: {carDetail.data.license}</div>
                     <div className="text-xl text-white">Daily Day Rate: {carDetail.data.dayRate}</div>
+                    {
+                    session? 
+                    <>
                     <Link href={`/booking?id=${params.cid}&model=${carDetail.data.car_model}`}>
                         <button className="block rounded-xl bg-gray-800 hover:bg-gray-600 px-4 py-2 text-white shadow-sm text-xl duration-500
                             hover:px-5 hover:py-3">
                             Make Booking
                         </button>
                     </Link>
+                    </>:null
+                    }  
                 </div>
             </div>
         </main>
