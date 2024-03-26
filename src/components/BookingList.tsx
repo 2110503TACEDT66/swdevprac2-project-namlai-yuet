@@ -58,18 +58,24 @@ export default function BookingList() {
     }
     return (
         <div className="flex flex-col">
-            <div className="grid grid-cols-3 mt-10 text-black">
+            <div className="mt-10 text-black">
                 {
                     (session.user.role !== 'admin')?bookings.map(booking =>(
-                        <div key={booking._id}>
-                            <h1>{booking.carModel}</h1>
-                            
-                            <button onClick={() => deleteBooking(booking._id)} className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-3 text-white shadow-sm">
+                        <div className="w-[50%] items-center justify-center m-auto bg-white my-[10px] p-5 block rounded-xl flex flex-row hover:scale-[1.01] duration-150 hover:shadow-lg" key={booking._id}>
+                            <div className="justify-start m-auto ml-5">
+                                <h1 className="text-xl font-bold">{booking.carModel}</h1>
+                                <h1>Pick-Up Date: {booking.pickupDate} at {booking.pickupLocation}</h1>
+                                <h1>Return Date {booking.returnDate} at {booking.returnLocation}</h1>
+                            </div>
+
+                            <div className="flex flex-col">
+                            <button onClick={() => deleteBooking(booking._id)} className="text-m text-black bg-white border-[1px] border-black font-semibold px-3 py-3 trounded hover:shadow-xl my-1 rounded-xl hover:bg-red-700 hover:text-white">
                                 Remove Booking
                             </button>
-                            <Link href={`/mybooking/edit?id=${booking._id}&carModel=${booking.carModel}`}>
-                                Edit
+                            <Link className="text-m text-black bg-white border-[1px] border-black font-semibold px-3 py-3 trounded hover:shadow-xl my-1 rounded-xl hover:bg-yellow-600 hover:text-white" href={`/mybooking/edit?id=${booking._id}&carModel=${booking.carModel}`}>
+                                Edit Booking
                             </Link>
+                            </div>
                         </div>
                     )): ""
                 }

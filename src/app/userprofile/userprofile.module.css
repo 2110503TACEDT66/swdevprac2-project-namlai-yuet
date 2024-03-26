@@ -5,13 +5,19 @@
     border: 1px solid black;
     width: 600px;
     height: 700px;
-    background: url('/img/registerbg.jpg');
-    color: white;
+    background: white;
+    color: black;
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    transition-duration: 150ms;
+}
+
+.outerbox:hover {
+    scale: 1.01;
+    transition-duration: 150ms;
 }
 
 .innerbox {
@@ -20,7 +26,6 @@
     padding: 40px;
     width: 100%;
     height: 100%;
-    backdrop-filter: brightness(40%);
     flex-direction: column;
     display: flex;
     gap: 5px;
@@ -35,13 +40,13 @@
     margin: auto;
     margin-top: 25px;
     margin-bottom: 35px;
-    color: white;
+    color: black;
     width: 250px;
     text-align: center;
 }
 
 .forPtext {
-    color: rgba(255, 255, 255, 0.8);
+    color: black;
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 2px;
@@ -49,13 +54,13 @@
 }
 
 .fordatatext {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(60, 66, 85, 0.281);
     height: 40px;
     line-height: 40px;
     border-radius: 20px;
     padding: 0px 20px;
-    border: none;
+    border: black solid 1px;
     margin-bottom: 20px;
-    color: white;
+    color: black;
     text-align: center;
   }
