@@ -13,8 +13,8 @@ export default async function Booking() {
   var createdAt = new Date(profile.data.createdAt);
 
     return(
-      <main className='bg-[#21333c]'>
-        <div className="h-[90px] bg-gradient-to-t from-[#21333c] to-black"></div>
+      <main>
+        <div className="bg-gradient-to-t from-[#21333c] to-black text-black fixed w-[100vw] h-[100vh]">
         <div>
             <div className={styles.outerbox}>
               <div className={styles.innerbox}>
@@ -32,6 +32,7 @@ export default async function Booking() {
                 <p className={styles.forPtext}>Member Since:</p>
                 <div className={styles.fordatatext}>{createdAt.toString()}</div>
               </div>
+            </div>
             </div>
         </div>
         <div className='h-[12vh] bg-[#21333c]'></div>

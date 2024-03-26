@@ -26,8 +26,8 @@ export default async function register() {
         }
     }
     return (
-        <main className='bg-[#21333c]'>
-            <div className="h-[90px] bg-gradient-to-t from-[#21333c] to-black"></div>
+        <main>
+            <div className="bg-gradient-to-t from-[#21333c] to-black text-black fixed w-[100vw] h-[100vh]">
             <div className={styles.registerform}>
                 <form action={registerUser} className={styles.innerform}>
                     <h2 className='text-2xl mb-[60px] mt-[30px] uppercase tracking-[2px]'>Registration Form</h2>
@@ -53,6 +53,7 @@ export default async function register() {
         
                         <button type="submit" className={styles.btn}>Submit Registration</button>
                 </form>
+            </div>
             </div>
             <div className='h-[12vh] bg-[#21333c]'>
             </div>
