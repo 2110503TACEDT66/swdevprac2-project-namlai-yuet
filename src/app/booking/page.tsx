@@ -25,7 +25,7 @@ export default function Booking() {
   });
   const { data: session } = useSession();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:React.FormEvent) => {
     e.preventDefault();
 
     try {
@@ -35,7 +35,7 @@ export default function Booking() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            authorization: `Bearer ${session.user.token}`,
+            authorization: `Bearer ${session?.user.token}`,
           },
           body: JSON.stringify({
             ...formData,

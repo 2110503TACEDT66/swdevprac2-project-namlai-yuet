@@ -22,7 +22,7 @@ export default function EditPage() {
     });
     const { data: session } = useSession();
   
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e:React.FormEvent) => {
       e.preventDefault();
   
       try {
@@ -32,7 +32,7 @@ export default function EditPage() {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
-              authorization: `Bearer ${session.user.token}`,
+              authorization: `Bearer ${session?.user.token}`,
             },
             body: JSON.stringify({
               ...formData,
